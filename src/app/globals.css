@@ -1,0 +1,100 @@
+/* 1️⃣ Put imports at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* 2️⃣ Cursive font class */
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* 3️⃣ Root variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* 3a️⃣ Custom fonts */
+  --font-playfair: 'Playfair Display', serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* 4️⃣ Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 5️⃣ Body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins); /* default font for body */
+}
+
+/* 6️⃣ Fade-in animation for dropdown */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* 7️⃣ Dropdown scale animation */
+@keyframes dropdown {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.3s ease-out forwards;
+  transform-origin: top;
+}
+
+/* 9️⃣ Swiper arrows and pagination customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  fill: white !important;
+  width: 24px !important;   /* smaller arrows */
+  height: 24px !important;
+  background: transparent !important;
+}
+
+.swiper-button-next {
+  right: 16px !important;    /* bring inwards */
+}
+
+.swiper-button-prev {
+  left: 16px !important;     /* bring inwards */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important; /* smaller arrow icons */
+  color: white !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  fill: white !important;
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+  background: white !important; /* white dots instead of blue */
+}
+
+/* 10️⃣ Make Swiper caption boxes fully rectangular */
+.swiper-slide .caption-box {
+  border-radius: 0 !important; /* removes all rounding */
+}
