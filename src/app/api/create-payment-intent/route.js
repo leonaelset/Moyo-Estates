@@ -1,6 +1,6 @@
 // src/app/api/create-payment-intent/route.js
 
-export const runtime = "node";
+export const runtime = "nodejs";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
